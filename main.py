@@ -1,0 +1,3 @@
+import Funcionario
+
+f = Funcionario()
