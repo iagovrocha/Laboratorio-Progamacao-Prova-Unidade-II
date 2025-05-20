@@ -1,5 +1,6 @@
+from abc import ABC
 
-class Pessoa:
+class Pessoa(ABC):
     def __init__(self, nome: str, rg: str, cpf: str, anoNasc: int, mesNasc: int, diaNasc: int, sexo: str):
         self.__nome = nome
         self.__rg = rg
