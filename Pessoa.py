@@ -32,14 +32,15 @@ class Pessoa(ABC):
     def get_sexo(self):
         return self.__sexo
     def Exibir(self):
+        print(f"{' Informações Pessoais ':-^50}")
         print(f"""
-               Nome: {self.get_nome()}
-               RG: {self.get_rg()}
-               CPF: {self.get_cpf()}
-               Ano de Nascimento: {self.get_anoNasc()}
-               Mês de Nascimento:{self.get_mesNasc()}
-               Dia de Nascimento: {self.get_diaNasc()}
-               Sexo: {self.get_sexo()}""")
+            Nome: {self.get_nome()}
+            RG: {self.get_rg()}
+            CPF: {self.get_cpf()}
+            Ano de Nascimento: {self.get_anoNasc()}
+            Mês de Nascimento:{self.get_mesNasc()}
+            Dia de Nascimento: {self.get_diaNasc()}
+            Sexo: {self.get_sexo()}\n""")
     def Cadastrar(self):
         pass
             
