@@ -1,12 +1,15 @@
 from __future__ import annotations
 class Sistema:
     def __init__(self):
-        self.cadastroFuncionarios = {}
+        self.__cadastroFuncionarios = {}
         # self.cadastroProfessores = {}
         # self.cadastroAlunos = {}
         # self.cadastroCoordenadores = {}
         # self.cadastroCoordenadoresAdministrativo = {}
         # self.cadastroCursos = {}
+
+    def getCadastroFuncionarios(self) -> dict:
+        return self.__cadastroFuncionarios
 
     def cadastroFuncionario(self, funcionario: "Funcionario") -> bool: # type: ignore
         """
@@ -14,7 +17,7 @@ class Sistema:
         :paramtr funcionario: Funcionario
         :return: True se o Funcionario foi inserido False caso não
         """
-        cadastro = self.cadastroFuncionarios
+        cadastro = self.__cadastroFuncionarios
         if not funcionario in cadastro.values():
             idAtual = len(cadastro) + 1
             cadastro[idAtual] = funcionario
