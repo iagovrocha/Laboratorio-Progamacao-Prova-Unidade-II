@@ -27,8 +27,8 @@ class Salario:
     def getPlanoSaude(self) -> float:
         return self.__planoSaude
     
-    def setSalarioBruto(self, salarioBruto):
-        self.__salarioBruto = salarioBruto
+    # def setSalarioBruto(self, salarioBruto):
+    #     self.__salarioBruto = salarioBruto
     
     # def setSalarioLiquido(self, salarioLiquido):
     #     self.__salarioLiquido = salarioLiquido
@@ -44,34 +44,33 @@ class Salario:
 
     def calcularSalario(self) -> float:
         if self._strategy:
-            self.setSalarioBruto(self._strategy.salario(self.coord))
-            #Acho que preciso veridicar se tal número é menor que é um elif
+            self.__salarioBruto = self._strategy.salario(self.coord)
+            print(self.getSalarioBruto())
             if self.getSalarioBruto() <= 1.518:
                 self.setINSS(self.getSalarioBruto() * 0.075)
 
-            elif 1518 < self.getSalarioBruto() <= 2793.88:
+            elif self.getSalarioBruto() <= 2793.88:
                 self.setINSS(self.getSalarioBruto() * 0.09)
 
-            elif 2793.88 < self.getSalarioBruto() <= 4190.3:
+            elif self.getSalarioBruto() <= 4190.3:
                 self.setINSS(self.getSalarioBruto() * 0.12)
             else:
                 self.setINSS(self.getSalarioBruto() * 0.14)
-            # elif 4190.3 < self.getSalarioBruto() <= 8157.41:
-            #     self.setINSS(self.getSalarioBruto() * 0.14)
+
             if 2259.20 < self.getSalarioBruto() <= 2826.65:
                 self.setIRRF(self.getSalarioBruto() * 0.075)
 
-            elif 2826.65 < self.getSalarioBruto() <= 3751.05:
+            elif self.getSalarioBruto() <= 3751.05:
                 self.setIRRF(self.getSalarioBruto() * 0.15)
 
-            elif 3751.05 < self.getSalarioBruto() <= 4664.68:
+            elif self.getSalarioBruto() <= 4664.68:
                 self.setIRRF(self.getSalarioBruto() * 0.225)
 
             else:
                 self.setIRRF(self.getSalarioBruto() * 0.275)
 
-            self.__salarioLiquido = self.getSalarioBruto() - self.getINSS() - self.getIRRF - self.getPlanoSaude
-
+            self.__salarioLiquido = self.getSalarioBruto() - self.getINSS() - self.getIRRF() - self.getPlanoSaude()
+            return self.getSalarioLiquido()
 
 
 #Podemos incluir no menu escolhas pedindo qual o nivel do professor
