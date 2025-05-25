@@ -9,7 +9,7 @@ class Funcionario(Pessoa):
         self.__setor = setor
         self.__cargo = cargo
         self.__nivel = nivel
-        self.sistema.cadastroFuncionario(self)
+        self.sistema.cadastrarFuncionario(self)
 
     def getMatricula(self) -> str:
         return self.__matricula
