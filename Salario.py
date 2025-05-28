@@ -3,14 +3,13 @@ from __future__ import annotations
 # Usando Strategy Desing Partter
 class Salario:
     # def __init__(self, salarioBruto: float, salarioLiquido: float, inss: float, irrf: float, planoSaude: float, strategy: Strategy): # type: ignore
-    def __init__(self, coord: bool, strategy: Strategy): # type: ignore
+    def __init__(self, strategy: Strategy): # type: ignore
         self.__salarioBruto = 0.0
-        self.__salarioLiquido = 0.0
         self.__inss = 0.0
         self.__irrf = 0.0
-        self.__planoSaude = 150
-        self.coord = coord
+        self.__planoSaude = 175
         self._strategy = strategy
+        self.__salarioLiquido = self.calcularSalario()
 
     def getSalarioBruto(self) -> float:
         return self.__salarioBruto
@@ -44,8 +43,8 @@ class Salario:
 
     def calcularSalario(self) -> float:
         if self._strategy:
-            self.__salarioBruto = self._strategy.salario(self.coord)
-            print(self.getSalarioBruto())
+            self.__salarioBruto = self._strategy.salario()
+            # print(self.getSalarioBruto())
             if self.getSalarioBruto() <= 1.518:
                 self.setINSS(self.getSalarioBruto() * 0.075)
 
@@ -80,13 +79,13 @@ class Salario:
 
 class ProfessorNivelI:
     def salario(coord):
-        return 4530 * (1.15 if coord else 1)
+        return 4530
 class ProfessorNivelII:
     def salario(coord):
-        return 5325.50 * (1.15 if coord else 1)
+        return 5325.50
 class ProfessorNivelIII:
-    def salario(coord):
-        return 8568.43 * (1.15 if coord else 1)
+    def salario():
+        return 8568.43
 
     # [1] - Tecnico Administrativo Nivel A
     # [2] - Tecnico Administrativo Nivel B
@@ -95,24 +94,24 @@ class ProfessorNivelIII:
     # [5] - Tecnico Administrativo Nivel E
 
 class TecnicoAdministrativoA:
-    def salario(coord):
-        return 1520.25 * (1.135 if coord else 1)
+    def salario():
+        return 1520.25
     
 class TecnicoAdministrativoB:
-    def salario(coord):
-        return 2362.67 * (1.135 if coord else 1)
+    def salario():
+        return 2362.67
     
 class TecnicoAdministrativoC:
-    def salario(coord):
-        return 2988.92 * (1.135 if coord else 1)
+    def salario():
+        return 2988.92
     
 class TecnicoAdministrativoD:
-    def salario(coord):
-        return 3572.77 * (1.135 if coord else 1)
+    def salario():
+        return 3572.77
     
 class TecnicoAdministrativoE:
-    def salario(coord):
-        return 4878.67 * (1.135 if coord else 1)
+    def salario():
+        return 4878.67
     
 
 
