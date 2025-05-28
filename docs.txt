@@ -1,0 +1,17 @@
+ALTERAÇÕES:
+
+1) Desvinculamos a classe “Curso” da classe “Matricula” e vinculamos a classe “Curso” a classe “Aluno” com grau de associação. E adicionamos uma “id” na classe “Curso”.
+
+2) Criamos a classe “Menu” e a classe “Sistema”. Alteramos o tipo primitivo do atributo “nível” da classe “Funcionarios”, de “int” para “string”.
+
+3) Criamos a classe “Arquivo”.
+
+
+
+
+FUNÇÕES:
+
+Iago: CoordenadorAdm e Sistemas.
+Paulo: Menu,  Curso e Arquivo.
+Allan: Aluno e Matricula.
+Carioca: Professor e Coordenador.
