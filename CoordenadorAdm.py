@@ -5,4 +5,25 @@ class CoordenadorAdm(Funcionario):
                   diaNasc: int, sexo: str, matricula: int, setor: str, cargo: str, nivel: str, area: str):
         super().__init__(sistema, nome, rg, cpf, anoNasc, mesNasc, diaNasc, sexo, matricula, setor, cargo, nivel)
         self.__area = area
+        self.__plusSalario = self.getSalario().getSalarioBruto() * 0.135
         sistema.cadastrarCoordenadoresAdministrativo(self)
+
+    def getArea(self):
+        return self.__area
+
+    def getPlusSalario(self):
+        return self.__plusSalario
+
+    def setArea(self, area):
+        self.__area = area
+
+    def calcularPlusSalario(self):
+        return self.getSalario().getSalarioLiquido() + self.getPlusSalario()
+    
+    def Exibir(self):
+        Funcionario.Exibir(self)
+        print(f"{' Informações Coordenador ':-^50}")
+        print(f"""
+            Area: {self.getArea()}
+            Bonificação: R${self.getPlusSalario():.2f}
+            """)
