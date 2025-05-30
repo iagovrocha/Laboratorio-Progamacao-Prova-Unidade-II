@@ -4,10 +4,10 @@ from CoordenadorAdm import CoordenadorAdm
 from Sistema import Sistema
 from Salario import *
 
-if __name__ == "__main__":
+
+def testes():
     sistema = Sistema()
     funcionario1 = Funcionario(sistema, "NOME FUNCIONARIO", "XX.XXX.XXX-X", "XXX.XXX.XXX-XX", 1993, 11, 11, "Masculino", 1, "Administrativo", "Funcionario Administrativo", "A")
-    # print(sistema.cadastroFuncionario(funcionario1))
     print(sistema.cadastrarFuncionario(funcionario1))
     print(sistema.getCadastroFuncionarios())
     sistema.getCadastroFuncionarios()[1].Exibir()
@@ -24,3 +24,9 @@ if __name__ == "__main__":
     print(sistema.getCoordenadoresAdministrativo()[1].getSalario().getSalarioLiquido())
     print(sistema.getCoordenadoresAdministrativo()[1].calcularPlusSalario())
     sistema.getCoordenadoresAdministrativo()[1].Exibir()
+
+def main():
+    pass
+
+if __name__ == "__main__":
+    testes()
