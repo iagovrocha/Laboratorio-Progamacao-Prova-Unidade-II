@@ -16,6 +16,10 @@ class CoordenadorAdm(Funcionario):
 
     def setArea(self, area):
         self.__area = area
+    
+    def setNivel(self, nivel: str):
+        Funcionario.setNivel(self, nivel)
+        self.__plusSalario = self.getSalario().getSalarioBruto() * 0.135
 
     def calcularPlusSalario(self):
         return self.getSalario().getSalarioLiquido() + self.getPlusSalario()
