@@ -3,7 +3,7 @@ class Sistema:
     def __init__(self):
         self.__cadastroFuncionarios = {}
         self.__cadastroCoordenadoresAdministrativo = {}
-        # self.cadastroProfessores = {}
+        self.cadastroProfessores = {}
         # self.cadastroAlunos = {}
         # self.cadastroCoordenadores = {}
         # self.cadastroCursos = {}
@@ -12,7 +12,8 @@ class Sistema:
         return self.__cadastroFuncionarios
     def getCoordenadoresAdministrativo (self) -> dict:
         return self.__cadastroCoordenadoresAdministrativo
-
+    def getCadastroProfessor(self) -> dict:
+        return self.cadastroProfessores
     def cadastrarFuncionario(self, funcionario: "Funcionario") -> bool: # type: ignore
         """
         -> Cadastra o obejeto Funcionario, adicionado ele ao dicionario cadastroFuncionarios.
@@ -37,6 +38,19 @@ class Sistema:
         if not coordnadorAdm in cadastro.values():
             idAtual = len(cadastro) + 1
             cadastro[idAtual] = coordnadorAdm
+            return True
+        else:
+            return False
+    def cadastrarProfessor(self, professor: Professor) -> bool: # type: ignore
+        """
+        -> Cadastra o obejeto Professor, adicionado ele ao dicionario cadastroProfessor.
+        :paramtr Professor: Professor
+        :return: True se o Professor foi inserido False caso não
+        """
+        cadastro = self.cadastroProfessores
+        if not professor in cadastro.values():
+            idAtual = len(cadastro) + 1
+            cadastro[idAtual] = professor
             return True
         else:
             return False

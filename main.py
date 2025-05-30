@@ -1,6 +1,7 @@
 from __future__ import annotations
 from Funcionario import Funcionario
 from CoordenadorAdm import CoordenadorAdm
+from Professor import Professor
 from Sistema import Sistema
 from Salario import *
 
@@ -25,6 +26,11 @@ def testes():
     print(sistema.getCoordenadoresAdministrativo()[1].calcularPlusSalario())
     sistema.getCoordenadoresAdministrativo()[1].Exibir()
 
+
+    professor = Professor(sistema, "NOME PROF", "XX.XXX.XXX-X", "XXX.XXX.XXX-XX",1993,11,11,"Masculino", 1, "Administrativo", "Funcionario Administrativo", "A", "FORMACAO", "DISCIPLINA")
+    print(sistema.cadastrarProfessor(professor))
+    print(sistema.getCadastroProfessor())
+    sistema.getCadastroProfessor()[1].Exibir()
 def main():
     pass
 
