@@ -15,10 +15,7 @@ class Professor(Funcionario):
         return self.__disciplina
 
     def Exibir(self):
-        Funcionario.Exibir()
+        Funcionario.Exibir(self)
         print(f"{' Informações Professor ':-^50}")
         print(f"Formação: {self.getFormacao()}")  
         print(f"Disciplina: {self.getDisciplina()}")
-
-    def CadastrarProfessor(self):
-        pass ##adicionarei futuramente
