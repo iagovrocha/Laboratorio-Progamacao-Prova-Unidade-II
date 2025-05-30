@@ -36,6 +36,11 @@ class Funcionario(Pessoa):
         return self.__nivel
     def getSalario(self):
         return self.__salario
+    
+    def setNivel(self, nivel: str):
+        self.__nivel = nivel
+        strategy_get = NIVEL_SALARIO_MAP.get(nivel)
+        self.__salario = Salario(strategy_get)
 
     def Exibir(self):
         Pessoa.Exibir(self)
