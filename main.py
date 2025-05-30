@@ -18,3 +18,9 @@ if __name__ == "__main__":
     print(sistema.getCoordenadoresAdministrativo()[1].get_nome())
     print(sistema.getCoordenadoresAdministrativo()[1].calcularPlusSalario())
     sistema.getCoordenadoresAdministrativo()[1].Exibir()
+
+    
+    coordenadorAdm01.setNivel("D")
+    print(sistema.getCoordenadoresAdministrativo()[1].getSalario().getSalarioLiquido())
+    print(sistema.getCoordenadoresAdministrativo()[1].calcularPlusSalario())
+    sistema.getCoordenadoresAdministrativo()[1].Exibir()
