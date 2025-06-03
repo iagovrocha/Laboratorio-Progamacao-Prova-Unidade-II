@@ -32,7 +32,27 @@ def testes():
     print(sistema.getCadastroProfessor())
     sistema.getCadastroProfessor()[1].Exibir()
 def main():
-    pass
-
+    try:
+        resp = 0
+        while resp != 3:
+            print("""
+        ---------- MENU ----------
+        |                        |
+        |     1) Adicionar       |
+        |     2) Exibir          |
+        |     3) Cancelar        |
+        |                        |
+        --------------------------
+                """)
+            resp = int(input("Escolha uma opção: "))
+            if resp == 3:
+                print("Parando sistema...")
+                break
+            elif resp == 1:
+                print("Adicionar")
+            elif resp == 2:
+                print("Exibir")
+    except KeyboardInterrupt:
+        print("Parando sistema...")
 if __name__ == "__main__":
-    testes()
+    main()
