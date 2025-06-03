@@ -3,6 +3,7 @@ from Funcionario import Funcionario
 from CoordenadorAdm import CoordenadorAdm
 from Professor import Professor
 from Sistema import Sistema
+from Aluno import Aluno
 from Salario import *
 
 
@@ -31,6 +32,15 @@ def testes():
     print(sistema.cadastrarProfessor(professor))
     print(sistema.getCadastroProfessor())
     sistema.getCadastroProfessor()[1].Exibir()
+
+    aluno1 = Aluno(sistema, "Maria Silva", "12.345.678-9", "123.456.789-00", 2005, 3, 15, "Feminino", 1001, "Ciência de Dados", 150.00)
+    if sistema.getCadastroAlunos(): 
+        sistema.getCadastroAlunos()[1].Exibir()
+
+    aluno2 = Aluno(sistema, "João Souza", "98.765.432-1", "987.654.321-99", 2004, 7, 20, "Masculino", 1002, "Engenharia de Software", 0.00)
+    if sistema.getCadastroAlunos() and 2 in sistema.getCadastroAlunos():
+        sistema.getCadastroAlunos()[2].Exibir()
+
 def main():
     try:
         resp = 0
