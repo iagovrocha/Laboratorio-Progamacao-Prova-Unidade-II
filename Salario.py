@@ -33,26 +33,26 @@ class Salario:
             self.__salarioBruto = self._strategy.salario()
             # Calculo INSS
             if self.getSalarioBruto() <= 1518:
-                self.setINSS(self.getSalarioBruto() * 0.075)
+                self.__inss = self.getSalarioBruto() * 0.075
             elif self.getSalarioBruto() <= 2793.88:
-                self.setINSS(self.getSalarioBruto() * 0.09)
+                self.__inss = self.getSalarioBruto() * 0.09
             elif self.getSalarioBruto() <= 4190.3:
-                self.setINSS(self.getSalarioBruto() * 0.12)
+                self.__inss = self.getSalarioBruto() * 0.12
             elif self.getSalarioBruto() <= 8157.41:
-                self.setINSS(self.getSalarioBruto() * 0.14)
+                self.__inss = self.getSalarioBruto() * 0.14
             else:
-                self.setINSS(8157.41 * 0.14)
+                self.__inss = 8157.41 * 0.14
             # Calculo IRRF
             if self.getSalarioBruto() <= 2259.20:
-                self.setIRRF(0.0)
+                self.__irrf = 0.0
             elif self.getSalarioBruto() <= 2826.65:
-                self.setIRRF(self.getSalarioBruto() * 0.075)
+                self.__irrf = self.getSalarioBruto() * 0.075
             elif self.getSalarioBruto() <= 3751.05:
-                self.setIRRF(self.getSalarioBruto() * 0.15)
+                self.__irrf = self.getSalarioBruto() * 0.15
             elif self.getSalarioBruto() <= 4664.68:
-                self.setIRRF(self.getSalarioBruto() * 0.225)
+                self.__irrf = self.getSalarioBruto() * 0.225
             else:
-                self.setIRRF(self.getSalarioBruto() * 0.275)
+                self.__irrf = self.getSalarioBruto() * 0.275
 
             self.__salarioLiquido = self.getSalarioBruto() - self.getINSS() - self.getIRRF() - self.getPlanoSaude()
             return self.getSalarioLiquido()
