@@ -31,28 +31,95 @@ def testes():
     print(sistema.cadastrarProfessor(professor))
     print(sistema.getCadastroProfessor())
     sistema.getCadastroProfessor()[1].Exibir()
-def main():
+
+def escolherClasse() -> str:
+    mapeamentoClasses = {
+        1 : "Aluno",
+        2 : "Professor",
+        3 : "Coordenador",
+        4 : "Coordenador Adm",
+        5 : "Curso"
+    }
+
+    print("""
+        +--------- CLASSE ---------+
+        |                          |
+        |      1) Aluno            |
+        |      2) Professor        |
+        |      3) Coordenador      |
+        |      4) Coordenador Adm  |
+        |      5) Curso            |
+        |                          |
+        +--------------------------+
+""")    
+    classe = mapeamentoClasses[int(input("Escolha sua classe: "))]
+    return classe
+
+def adicionar(sistema :Sistema, classe) -> dict[str,any]:
+    mapeamentoClasses = {
+        "Aluno": sistema,
+        "Professor":sistema.cadastrarProfessor(),
+        "Coordenador": sistema,
+        "Coordenador Adm":sistema,
+        "Curso": sistema
+    }
+
+    return mapeamentoClasses[classe]
+
+    
+def exibir(sistema :Sistema,classe):
+    mapeamentoClasses = {
+        "Aluno": sistema,
+        "Professor":sistema.getCadastroProfessor(),
+        "Coordenador": sistema,
+        "Coordenador Adm": sistema,
+        "Curso": sistema
+    }
+    print(mapeamentoClasses[classe])
+    print("""
+        +--------- EXIBIR ---------+
+        |                          |
+        |      1) Apenas um (id)   |
+        |      2) Todos            |
+        |                          |
+        +--------------------------+
+
+""")
+    r = int(input("Escolha a opçao: "))
+    if r == 1:
+        mapeamentoClasses[classe][int(input("Digite o ID: "))].Exibir()
+    elif r == 2:
+        for c in mapeamentoClasses[classe].keys():
+            print(f"\n======================= ID: {c} =======================\n")
+            mapeamentoClasses[classe][c].Exibir()
+        
+
+def menu() -> None:
     try:
-        resp = 0
-        while resp != 3:
+        sistema = Sistema()
+        while True:
             print("""
-        ---------- MENU ----------
+        +--------- MENU ---------+
         |                        |
-        |     1) Adicionar       |
-        |     2) Exibir          |
-        |     3) Cancelar        |
+        |      1) Adicionar      |
+        |      2) Exibir         |
+        |      3) Cancelar       |
         |                        |
-        --------------------------
+        +------------------------+
                 """)
             resp = int(input("Escolha uma opção: "))
             if resp == 3:
                 print("Parando sistema...")
                 break
             elif resp == 1:
-                print("Adicionar")
+                c = escolherClasse()
+                adicionar(sistema,c)
             elif resp == 2:
-                print("Exibir")
+                c = escolherClasse()
+                exibir(sistema,c)
+
     except KeyboardInterrupt:
         print("Parando sistema...")
+
 if __name__ == "__main__":
-    main()
+    menu()
