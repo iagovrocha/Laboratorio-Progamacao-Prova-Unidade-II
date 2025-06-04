@@ -28,7 +28,7 @@ class Curso:
         #Vai ficar faltando
         return 
     
-    def Exibir(self) -> str:
+    def Exibir(self):
         print(f"{' Informações Curso ':-^50}")
         print(f"""
             Curso: {self.getTitulo()}
