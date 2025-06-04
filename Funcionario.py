@@ -5,7 +5,7 @@ from Salario import *
 NIVEL_SALARIO_MAP = {
     "I": ProfessorNivelI,
     "II": ProfessorNivelII,
-    "III": ProfessorNivelII,
+    "III": ProfessorNivelIII,
     "A": TecnicoAdministrativoA,
     "B": TecnicoAdministrativoB,
     "C": TecnicoAdministrativoC,
@@ -50,4 +50,5 @@ class Funcionario(Pessoa):
             Setor: {self.getSetor()}
             Cargo: {self.getCargo()}
             Nivel: {self.getNivel()}
+            Salário Liquido: {self.getSalario().getSalarioLiquido():.2f}
             """)
