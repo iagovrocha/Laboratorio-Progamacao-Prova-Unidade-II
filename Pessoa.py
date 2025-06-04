@@ -13,25 +13,19 @@ class Pessoa(ABC):
 
     def getNome(self):
         return self.__nome
-
     def getRg(self):
         return self.__rg
-
     def getCpf(self):
         return self.__cpf
-
     def getAnoNasc(self):
         return self.__anoNasc
-
     def getMesNasc(self):
         return self.__mesNasc
-
     def getDiaNasc(self):
         return self.__diaNasc
-
     def getSexo(self):
         return self.__sexo
-    
+
     def Exibir(self):
         print(f"{' Informações Pessoais ':-^50}")
         print(f"""

@@ -26,13 +26,13 @@ class Matricula:
         return self.__idMatricula
 
     def __str__(self) -> str:
-        return f"Matricula(ID: {self.getIdMatricula()}, Aluno: {self.getAluno().get_nome()}, Curso: {self.getCurso().getTitulo()}, Data: {self.getDataMatricula()})"
+        return f"Matricula(ID: {self.getIdMatricula()}, Aluno: {self.getAluno().getNome()}, Curso: {self.getCurso().getTitulo()}, Data: {self.getDataMatricula()})"
 
     def Exibir(self):
         print(f"{' Informações da Matrícula ':-^50}")
         print(f"""
             ID da Matrícula: {self.getIdMatricula()}
-            Aluno: {self.getAluno().get_nome()} (Código: {self.getAluno().getCodigo()})
+            Aluno: {self.getAluno().getNome()} (Código: {self.getAluno().getCodigo()})
             Curso: {self.getCurso().getTitulo()} (ID: {self.getCurso().getId()})
             Data da Matrícula: {self.getDataMatricula().strftime('%d/%m/%Y')}
             """)
