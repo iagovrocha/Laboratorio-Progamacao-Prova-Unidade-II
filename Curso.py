@@ -28,7 +28,7 @@ class Curso:
         #Vai ficar faltando
         return 
     
-    def exibirCurso(self) -> str:
+    def Exibir(self) -> str:
         return f"""
         Curso: {self.getTitulo()}
         Descrição: {self.getDescricao()}
