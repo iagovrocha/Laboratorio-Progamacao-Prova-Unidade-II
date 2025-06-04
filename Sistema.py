@@ -1,4 +1,5 @@
 from __future__ import annotations
+from Professor import Professor
 class Sistema:
     def __init__(self):
         self.__cadastroFuncionarios = {}
@@ -41,7 +42,8 @@ class Sistema:
             return True
         else:
             return False
-    def cadastrarProfessor(self, professor: Professor) -> bool: # type: ignore
+    def cadastrarProfessor(self) -> bool: # type: ignore
+        professor = Professor(self,"jorge","teste","teste",2000,10,11,"m",123,'a','b','c','prof','mat')
         """
         -> Cadastra o obejeto Professor, adicionado ele ao dicionario cadastroProfessor.
         :paramtr Professor: Professor
