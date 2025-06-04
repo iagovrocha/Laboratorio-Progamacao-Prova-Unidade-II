@@ -2,7 +2,6 @@ from __future__ import annotations
 
 # Usando Strategy Desing Partter
 class Salario:
-    # def __init__(self, salarioBruto: float, salarioLiquido: float, inss: float, irrf: float, planoSaude: float, strategy: Strategy): # type: ignore
     def __init__(self, strategy: Strategy): # type: ignore
         self.__salarioBruto = 0.0
         self.__inss = 0.0
@@ -25,18 +24,6 @@ class Salario:
 
     def getPlanoSaude(self) -> float:
         return self.__planoSaude
-    
-    # def setSalarioBruto(self, salarioBruto):
-    #     self.__salarioBruto = salarioBruto
-    
-    # def setSalarioLiquido(self, salarioLiquido):
-    #     self.__salarioLiquido = salarioLiquido
-
-    def setINSS(self, inss):
-        self.__inss = inss
-
-    def setIRRF(self, irrf):
-        self.__irrf = irrf
 
     def setPlanoSaude(self, planoSaude):
         self.__planoSaude = planoSaude
@@ -44,27 +31,26 @@ class Salario:
     def calcularSalario(self) -> float:
         if self._strategy:
             self.__salarioBruto = self._strategy.salario()
-            # print(self.getSalarioBruto())
-            if self.getSalarioBruto() <= 1.518:
+            # Calculo INSS
+            if self.getSalarioBruto() <= 1518:
                 self.setINSS(self.getSalarioBruto() * 0.075)
-
             elif self.getSalarioBruto() <= 2793.88:
                 self.setINSS(self.getSalarioBruto() * 0.09)
-
             elif self.getSalarioBruto() <= 4190.3:
                 self.setINSS(self.getSalarioBruto() * 0.12)
-            else:
+            elif self.getSalarioBruto() <= 8157.41:
                 self.setINSS(self.getSalarioBruto() * 0.14)
-
-            if 2259.20 < self.getSalarioBruto() <= 2826.65:
+            else:
+                self.setINSS(8157.41 * 0.14)
+            # Calculo IRRF
+            if self.getSalarioBruto() <= 2259.20:
+                self.setIRRF(0.0)
+            elif self.getSalarioBruto() <= 2826.65:
                 self.setIRRF(self.getSalarioBruto() * 0.075)
-
             elif self.getSalarioBruto() <= 3751.05:
                 self.setIRRF(self.getSalarioBruto() * 0.15)
-
             elif self.getSalarioBruto() <= 4664.68:
                 self.setIRRF(self.getSalarioBruto() * 0.225)
-
             else:
                 self.setIRRF(self.getSalarioBruto() * 0.275)
 
