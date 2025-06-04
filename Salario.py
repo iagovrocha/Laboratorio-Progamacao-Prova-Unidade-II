@@ -78,10 +78,10 @@ class Salario:
     # [3] - Professor Nivel III
 
 class ProfessorNivelI:
-    def salario(coord):
+    def salario():
         return 4530
 class ProfessorNivelII:
-    def salario(coord):
+    def salario():
         return 5325.50
 class ProfessorNivelIII:
     def salario():
