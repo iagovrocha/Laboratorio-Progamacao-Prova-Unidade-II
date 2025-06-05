@@ -36,8 +36,8 @@ class Curso:
             Custo: {self.getValor()}
             Sala: {self.sala}
             ID: {self.getId()}
-            Professor: {self.professor}
-            Coordenador: {self.coordenador}
+            Professor: {self.professor.getNome()}
+            Coordenador: {self.coordenador.getNome()}
             Numero Minimo de Alunos: {self.numMinAluno}
         """)
     
