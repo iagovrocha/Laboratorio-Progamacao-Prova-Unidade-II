@@ -2,12 +2,11 @@ from __future__ import annotations
 class Curso:
 
     #Construtor da Classe Curso
-    def __init__(self, titulo: str, descricao: str, sala: str, idCurso: int, professor: Professor, coordenador: Coordenador): # type: ignore
+    def __init__(self, titulo: str, descricao: str, sala: str, professor: Professor, coordenador: Coordenador): # type: ignore
         self.__titulo = titulo
         self.__descricao = descricao
         self.__valor = 865.23
         self.sala = sala
-        self.__idCurso = idCurso 
         self.professor = professor
         self.coordenador = coordenador 
         self.numMinAluno = None
@@ -20,9 +19,6 @@ class Curso:
     
     def getValor(self) -> float:
         return self.__valor
-    
-    def getId(self) -> int:
-        return self.__idCurso
 
     def cadastrarCurso():
         #Vai ficar faltando
@@ -35,7 +31,6 @@ class Curso:
             Descrição: {self.getDescricao()}
             Custo: {self.getValor()}
             Sala: {self.sala}
-            ID: {self.getId()}
             Professor: {self.professor.getNome()}
             Coordenador: {self.coordenador.getNome()}
             Numero Minimo de Alunos: {self.numMinAluno}
