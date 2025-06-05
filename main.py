@@ -51,9 +51,10 @@ def escolherClasse() -> str:
         |      5) Curso            |
         |                          |
         +--------------------------+
-""")    
+""")
     classe = mapeamentoClasses[int(input("Escolha sua classe: "))]
     return classe
+
 
 def adicionar(sistema :Sistema, classe) -> dict[str,any]:
     mapeamentoClasses = {
@@ -70,12 +71,12 @@ def adicionar(sistema :Sistema, classe) -> dict[str,any]:
 def exibir(sistema :Sistema,classe):
     mapeamentoClasses = {
         "Aluno": sistema,
-        "Professor":sistema.getCadastroProfessor(),
+        "Professor":sistema.getCadastroProfessores(),
         "Coordenador": sistema,
         "Coordenador Adm": sistema,
         "Curso": sistema
     }
-    print(mapeamentoClasses[classe])
+
     print("""
         +--------- EXIBIR ---------+
         |                          |
@@ -92,12 +93,14 @@ def exibir(sistema :Sistema,classe):
         for c in mapeamentoClasses[classe].keys():
             print(f"\n======================= ID: {c} =======================\n")
             mapeamentoClasses[classe][c].Exibir()
+    else:
+        print("Opção inválida")
         
 
 def menu() -> None:
-    try:
-        sistema = Sistema()
-        while True:
+    sistema = Sistema()
+    while True:
+        try:
             print("""
         +--------- MENU ---------+
         |                        |
@@ -117,9 +120,21 @@ def menu() -> None:
             elif resp == 2:
                 c = escolherClasse()
                 exibir(sistema,c)
+            else:
+                print("Opção Inválida!!")
 
-    except KeyboardInterrupt:
-        print("Parando sistema...")
+        except KeyboardInterrupt:
+            print("\nParando sistema...")
+            break
+
+        except ValueError:
+            print("\nOpção inválida!!")
+
+        except KeyError:
+            print("\nOpção inválida \nOperação Cancelada!")
+
+
+
 
 if __name__ == "__main__":
     menu()
