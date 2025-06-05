@@ -1,4 +1,6 @@
 from __future__ import annotations
+from math import ceil
+
 class Curso:
 
     #Construtor da Classe Curso
@@ -9,7 +11,7 @@ class Curso:
         self.sala = sala
         self.professor = professor
         self.coordenador = coordenador 
-        self.numMinAluno = None
+        self.numMinAluno = self.calcularNumMinAluno()
 
     def getTitulo(self) -> str:
         return self.__titulo
@@ -37,5 +39,5 @@ class Curso:
         """)
     
     def calcularNumMinAluno(self) -> int:
-        self.numMinAluno = self.professor.getSalario() / self.__valor
-        return int(f"{self.numMinAluno:.0f}")
+        self.numMinAluno = self.professor.getSalario().getSalarioBruto() / self.__valor
+        return ceil(self.numMinAluno)
