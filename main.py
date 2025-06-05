@@ -38,7 +38,8 @@ def escolherClasse() -> str:
         2 : "Professor",
         3 : "Coordenador",
         4 : "Coordenador Adm",
-        5 : "Curso"
+        5 : "Curso",
+        6 : "Funcionario"
     }
 
     print("""
@@ -49,6 +50,7 @@ def escolherClasse() -> str:
         |      3) Coordenador      |
         |      4) Coordenador Adm  |
         |      5) Curso            |
+        |      6) Funcionário      |
         |                          |
         +--------------------------+
 """)
@@ -62,7 +64,8 @@ def adicionar(sistema :Sistema, classe) -> dict[str,any]:
         "Professor":sistema.cadastrarProfessor(),
         "Coordenador": sistema,
         "Coordenador Adm":sistema,
-        "Curso": sistema
+        "Curso": sistema,
+        "Funcionario" : sistema
     }
 
     return mapeamentoClasses[classe]
@@ -74,7 +77,8 @@ def exibir(sistema :Sistema,classe):
         "Professor":sistema.getCadastroProfessores(),
         "Coordenador": sistema,
         "Coordenador Adm": sistema,
-        "Curso": sistema
+        "Curso": sistema,
+        "Funcionario" : sistema
     }
 
     print("""
