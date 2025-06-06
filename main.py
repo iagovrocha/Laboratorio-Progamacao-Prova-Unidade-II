@@ -66,7 +66,6 @@ def exibir(sistema :Sistema,classe):
     if r == 1:
         cadastro[int(input("Digite o ID: "))].Exibir()
     elif r == 2:
-        print(cadastro)
         for c in cadastro.keys():
             print(f"\n======================= ID: {c} =======================\n")
             cadastro[c].Exibir()
