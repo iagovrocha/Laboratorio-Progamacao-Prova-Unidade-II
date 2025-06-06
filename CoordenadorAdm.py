@@ -6,7 +6,7 @@ class CoordenadorAdm(Funcionario):
         super().__init__(sistema, nome, rg, cpf, anoNasc, mesNasc, diaNasc, sexo, matricula, setor, cargo, nivel)
         self.__area = area
         self.__plusSalario = self.getSalario().getSalarioBruto() * 0.135
-        sistema.cadastrarCoordenadoresAdministrativo(self)
+
 
     def getArea(self):
         return self.__area
