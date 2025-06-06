@@ -1,5 +1,8 @@
 from __future__ import annotations
+
 from Professor import Professor
+
+
 class Sistema:
     def __init__(self):
         self.__cadastroFuncionarios = {}
@@ -58,16 +61,21 @@ class Sistema:
         else:
             return False
     def cadastrarProfessor(self) -> bool: # type: ignore
-        professor = Professor(self,"jorge","teste","teste",2000,10,11,"m",123,'a','b','c','prof','mat')
+        from CadastroProfessor import menuCadastroProfessor
+
         """
         -> Cadastra o obejeto Professor, adicionado ele ao dicionario cadastroProfessor.
         :paramtr Professor: Professor
         :return: True se o Professor foi inserido False caso não
         """
+        CadastroProf = menuCadastroProfessor()
+        professor = Professor(self, CadastroProf[0], CadastroProf[1], CadastroProf[2], CadastroProf[3], CadastroProf[4], CadastroProf[5], CadastroProf[6], CadastroProf[7],
+            CadastroProf[8], CadastroProf[9], CadastroProf[10], CadastroProf[11], CadastroProf[12])
         cadastro = self.__cadastroProfessores
         if not professor in cadastro.values():
             idAtual = len(cadastro) + 1
             cadastro[idAtual] = professor
+            print("Professor cadastrado.")
             return True
         else:
             return False
@@ -91,8 +99,6 @@ class Sistema:
         :paramtr Coordenador: Coordenador
         :return: True se o Coordenador foi inserido False caso não
         """
-        # c = Coordenador(sistema, "NOME COORDENADOR", "XX.XXX.XXX-X", "XXX.XXX.XXX-XX", 1993, 11, 11, "Masculino", 1, "Exatas", "Coordenador", "A", "Matematica", "Matematica I", "Exatas")
-
         cadastro = self.__cadastroCoordenadores
         if not coordenador in cadastro.values():
             idAtual = len(cadastro) + 1
