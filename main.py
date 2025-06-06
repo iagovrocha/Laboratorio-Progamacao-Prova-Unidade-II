@@ -25,30 +25,31 @@ def escolherClasse() -> str:
         +--------------------------+
 """)
     classe = mapeamentoClasses[int(input("Escolha sua classe: "))]
+    print(classe)
     return classe
 
 
 def adicionar(sistema :Sistema, classe) -> dict[str,any]:
     mapeamentoClasses = {
-        "Aluno": sistema,
-        "Professor":sistema.cadastrarProfessor(),
-        "Coordenador": sistema,
-        "Coordenador Adm":sistema,
-        "Curso": sistema,
-        "Funcionario" : sistema
+        "Aluno": sistema.cadastrarAluno,
+        "Professor":sistema.cadastrarProfessor,
+        "Coordenador": sistema.cadastrarCoordenador,
+        "Coordenador Adm":sistema.cadastrarCoordenadoresAdministrativo,
+        "Curso": sistema.cadastrarCurso,
+        "Funcionario" : sistema.cadastrarFuncionario
     }
-
-    return mapeamentoClasses[classe]
+ 
+    return mapeamentoClasses[classe]()
 
     
 def exibir(sistema :Sistema,classe):
     mapeamentoClasses = {
-        "Aluno": sistema,
-        "Professor":sistema.getCadastroProfessores(),
-        "Coordenador": sistema,
-        "Coordenador Adm": sistema,
-        "Curso": sistema,
-        "Funcionario" : sistema
+        "Aluno": sistema.getCadastroAlunos,
+        "Professor":sistema.getCadastroProfessores,
+        "Coordenador": sistema.getCadastroCoordenadores,
+        "Coordenador Adm": sistema.getCoordenadoresAdministrativo,
+        "Curso": sistema.getCadastroCursos,
+        "Funcionario" : sistema.getCadastroFuncionarios
     }
 
     print("""
@@ -61,12 +62,14 @@ def exibir(sistema :Sistema,classe):
 
 """)
     r = int(input("Escolha a opçao: "))
+    cadastro = mapeamentoClasses[classe]()
     if r == 1:
-        mapeamentoClasses[classe][int(input("Digite o ID: "))].Exibir()
+        cadastro[int(input("Digite o ID: "))].Exibir()
     elif r == 2:
-        for c in mapeamentoClasses[classe].keys():
+        print(cadastro)
+        for c in cadastro.keys():
             print(f"\n======================= ID: {c} =======================\n")
-            mapeamentoClasses[classe][c].Exibir()
+            cadastro[c].Exibir()
     else:
         print("Opção inválida")
         
