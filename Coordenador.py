@@ -8,7 +8,6 @@ class Coordenador(Professor):
         Professor.__init__(self, sistema, nome, rg, cpf, anoNasc, mesNasc, diaNasc, sexo, matricula, setor, cargo, nivel, formacao, disciplina)
         self.__area = area
         self.__plusSalario = self.getSalario().getSalarioBruto() * 0.15
-        sistema.cadastrarCoordenadores(self)
 
     def getArea(self):
         return self.__area
