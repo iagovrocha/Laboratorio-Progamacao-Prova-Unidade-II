@@ -36,6 +36,6 @@ class Aluno(Pessoa):
         print(f"""
             Código: {self.getCodigo()}
             Interesse: {self.getInteresse()}
-            Desconto: R${self.getDesconto():.2f}
+            Desconto: {self.getDesconto():.2f}%
             Matricula: {self.getMatricula().getIdMatricula()}
             """)

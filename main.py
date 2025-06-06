@@ -25,7 +25,7 @@ def escolherClasse() -> str:
         +--------------------------+
 """)
     classe = mapeamentoClasses[int(input("Escolha sua classe: "))]
-    print(classe)
+
     return classe
 
 

@@ -58,11 +58,6 @@ class Salario:
             return self.getSalarioLiquido()
 
 
-#Podemos incluir no menu escolhas pedindo qual o nivel do professor
-    # [1] - Professor Nivel I
-    # [2] - Professor Nivel II
-    # [3] - Professor Nivel III
-
 class ProfessorNivelI:
     def salario():
         return 4530
@@ -72,12 +67,6 @@ class ProfessorNivelII:
 class ProfessorNivelIII:
     def salario():
         return 8568.43
-
-    # [1] - Tecnico Administrativo Nivel A
-    # [2] - Tecnico Administrativo Nivel B
-    # [3] - Tecnico Administrativo Nivel C
-    # [4] - Tecnico Administrativo Nivel D
-    # [5] - Tecnico Administrativo Nivel E
 
 class TecnicoAdministrativoA:
     def salario():
@@ -99,27 +88,3 @@ class TecnicoAdministrativoE:
     def salario():
         return 4878.67
     
-
-
-# Quais são as alíquotas do INSS em 2025?
-# As alíquotas de contribuição do INSS 2025 variam de acordo com as faixas salariais. Em 2025, a tabela é:
-
-# – Até R$1.518: 7,5%; 
-
-# – De R$1.518,01 até R$2.793,88: 9%; 
-
-# – De R$2.793,89 até R$4.190,83: 12%; 
-
-# – De R$4.190,84 até R$8.157,41: 14%.
-
-
-# Como fazer o cálculo do imposto?
-# A conta do IR depende de uma tabela dividida em quatro faixas de renda, com uma alíquota progressiva que vai de 7,5% a 27,5%. A faixa máxima atinge os salários acima de R$ 4.664,68.
-
-# Veja abaixo as faixas e as respectivas alíquotas em vigor ao longo de 2024:
-
-# Faixa 1: Até R$ 2.259,20: isento
-# Faixa 2: De 2.259,21 até 2.826,65: 7,5% | dedução: R$ 169,44
-# Faixa 3: De 2.826,66 até 3.751,05: 15% | dedução: R$ 381,44
-# Faixa 4: De 3.751,07 até 4.664,68: 22,5% | dedução: R$ 662,77
-# Faixa 5: Acima de R$ 4.664,68: 27,5% | dedução: R$ 896

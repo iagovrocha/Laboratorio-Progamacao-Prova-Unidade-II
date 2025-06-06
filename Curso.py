@@ -21,10 +21,6 @@ class Curso:
     
     def getValor(self) -> float:
         return self.__valor
-
-    def cadastrarCurso():
-        #Vai ficar faltando
-        return 
     
     def Exibir(self):
         print(f"{' Informações Curso ':-^50}")

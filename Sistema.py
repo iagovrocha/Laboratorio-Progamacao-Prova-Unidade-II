@@ -15,7 +15,6 @@ class Sistema:
         self.__cadastroAlunos = {}
         self.__cadastroCoordenadores = {}
         self.__cadastroCursos = {}
-        # self.__cadastroMatriculas = {}
 
     def getCadastroFuncionarios(self) -> dict:
         return self.__cadastroFuncionarios
@@ -34,11 +33,9 @@ class Sistema:
     
     def getCadastroCursos(self):
         return self.__cadastroCursos
-    # def getCadastroMatriculas(self) -> dict: 
-    #     return self.__cadastroMatriculas
     
     def cadastrarFuncionario(self) -> bool: # type: ignore
-        print("Cadastrado funcionario!!!!!!!!!")
+
         from CadastroFuncionario import menuCadastroFuncionario
         """
         -> Cadastra o obejeto Funcionario, adicionado ele ao dicionario cadastroFuncionarios.
@@ -57,7 +54,7 @@ class Sistema:
             return False
     
     def cadastrarCoordenadoresAdministrativo(self) -> bool: # type: ignore
-        print("Cadastrado adm!!!!!!!!!")
+
         from CadastroCoordenadorAdm import menuCadastroCoordenadorAdm
         """
         -> Cadastra o obejeto CoordenadorAdm, adicionado ele ao dicionario cadastroCoordenadoresAdministrativo.
@@ -76,7 +73,7 @@ class Sistema:
             return False
     
     def cadastrarProfessor(self) -> bool: # type: ignore
-        print("professor!!!!")
+
         from CadastroProfessor import menuCadastroProfessor
 
         """
@@ -97,7 +94,7 @@ class Sistema:
             return False
     def cadastrarAluno(self) -> bool: # type: ignore
         from CadastroAluno import menuCadastroAluno
-        print("Cadastrado aluno!!!!!!!!!")
+
         """
         -> Cadastra o objeto Aluno, adicionando-o ao dicionário cadastroAlunos.
         :paramtr aluno: Aluno
@@ -115,7 +112,7 @@ class Sistema:
             return False
         
     def cadastrarCoordenador(self) -> bool: # type: ignore
-        print("Cadastrado Coordenador!!!!!!!!!")
+
         from CadastroCoordenador import menuCadastroCoordenador
         """
         -> Cadastra o obejeto Coordenador, adicionado ele ao dicionario cadastroCoordenadores.
@@ -134,7 +131,7 @@ class Sistema:
             return False
     
     def cadastrarCurso(self):  # type: ignore
-        print("Cadastrado Curso!!!!!!!!!")
+
         from CadastroCurso import menuCadastroCurso
         """
         -> Cadastra o obejeto Curso, adicionado ele ao dicionario Curso.
@@ -150,17 +147,3 @@ class Sistema:
             return True
         else:
             return False
-
-    # def cadastrarMatriculas(self, matricula: "Matricula") -> bool: # type: ignore
-    #     """
-    #     -> Cadastra o objeto Matricula, adicionando-o ao dicionário __cadastroMatriculas.
-    #     :paramtr matricula: Matricula
-    #     :return: True se a Matricula foi inserida, False caso contrário
-    #     """
-    #     cadastro = self.__cadastroMatriculas
-    #     if not matricula in cadastro.values():
-    #         idAtual = len(cadastro) + 1
-    #         cadastro[idAtual] = matricula
-    #         return True
-    #     else:
-    #         return False
