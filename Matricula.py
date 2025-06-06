@@ -2,16 +2,14 @@ from __future__ import annotations
 import datetime
 from Aluno import Aluno
 from Curso import Curso
-from Sistema import Sistema
 
 
 class Matricula:
-    def __init__(self, sistema: Sistema, aluno: Aluno, curso: Curso): 
+    def __init__(self, sistema: Sistema, aluno: Aluno, curso: Curso):  # type: ignore
         self.__aluno = aluno
         self.__curso = curso
         self.__dataMatricula = datetime.date.today()
-        self.__idMatricula = len(sistema.getCadastroMatriculas()) + 1
-        sistema.cadastrarMatricula(self) 
+        self.__idMatricula = len(sistema.getCadastroAlunos()) + 1
 
     def getAluno(self) -> Aluno: 
         return self.__aluno
