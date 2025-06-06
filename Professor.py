@@ -7,7 +7,6 @@ class Professor(Funcionario):
         Funcionario.__init__(self, sistema, nome, rg, cpf, anoNasc, mesNasc, diaNasc, sexo, matricula, setor, cargo, nivel)
         self.__formacao = formacao
         self.__disciplina  = disciplina
-        #sistema.cadastrarProfessor(self)
 
     def getFormacao(self) -> str:
         return self.__formacao
