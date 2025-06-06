@@ -4,12 +4,12 @@ from Pessoa import Pessoa
 from Matricula import Matricula
 class Aluno(Pessoa):
     def __init__(self, sistema: Sistema, nome: str, rg: str, cpf: str, anoNasc: int, mesNasc: int, # type: ignore
-                  diaNasc: int, sexo: str, codigo: int, interesse: str, desconto: float, matricula : Matricula):
+                  diaNasc: int, sexo: str, codigo: int, interesse: str, desconto: float):
         super().__init__(nome, rg, cpf, anoNasc, mesNasc, diaNasc, sexo)
         self.__codigo = codigo
         self.__interesse = interesse
         self.__desconto = desconto
-        self.__matricula = Matricula()
+        self.__matricula = Matricula(sistema)
         
 
     def getCodigo(self) -> int:
