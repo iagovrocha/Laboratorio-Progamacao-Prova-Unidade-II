@@ -24,7 +24,6 @@ class Funcionario(Pessoa):
         self.__nivel = nivel
         strategy_get = NIVEL_SALARIO_MAP.get(nivel)
         self.__salario = Salario(strategy_get)
-        self.sistema.cadastrarFuncionario(self)
 
     def getMatricula(self) -> str:
         return self.__matricula
